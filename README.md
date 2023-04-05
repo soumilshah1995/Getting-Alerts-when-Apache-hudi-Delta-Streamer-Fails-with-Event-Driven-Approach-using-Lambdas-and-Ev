@@ -50,3 +50,6 @@ OR
 npx sls deploy
 
 ```
+
+# Alerts 
+![image](https://user-images.githubusercontent.com/39345855/230177625-69670cac-58da-4daf-be58-0a18a72b930b.png)
