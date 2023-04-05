@@ -42,7 +42,7 @@ DEV_REGION=us-east-1
 
 ```
 serverless config credentials --provider aws --key <ACCESS KEY>  --secret <SECRET KEY>  -o
-serverless config credentials --provider aws --key <AKIAQUOMZI4GIZ4PHGL4  --secret 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  -o
+serverless config credentials --provider aws --key XXXXXX  --secret XXXXXX  -o
 
 
 sls deploy
