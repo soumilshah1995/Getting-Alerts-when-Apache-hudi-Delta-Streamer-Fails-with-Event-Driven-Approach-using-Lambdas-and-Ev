@@ -1,0 +1,48 @@
+service: emr-failed-jobs-alerts
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.8
+  memorySize: 200
+  timeout: 500
+
+useDotenv: true
+
+functions:
+  glue-jobs-failed:
+    handler: handler.lambda_handler
+    environment:
+      TopicArn: arn:aws:sns:us-east-1:${env:ACCOUNT}:${env:TopicName}
+      DEV_ACCESS_KEY: ${env:DEV_ACCESS_KEY}
+      DEV_SECRET_KEY: ${env:DEV_SECRET_KEY}
+      DEV_REGION: ${env:DEV_REGION}
+    events:
+      - eventBridge:
+          pattern:
+            source:
+              - aws.emr-serverless
+            detail-type:
+              - "EMR Serverless Job Run State Change"
+            detail:
+              state:
+                - 'FAILED'
+                - 'fail'
+                - 'Stopped'
+                - 'CANCELLED'
+
+resources:
+  Resources:
+
+    MySubscription:
+      Type: AWS::SNS::Subscription
+      Properties:
+        Endpoint: 'YOUR EMAIL GOES HERE'
+        Protocol: email
+        TopicArn: !Ref 'SNSTopic'
+
+    SNSTopic:
+      Type: AWS::SNS::Topic
+      Properties:
+        TopicName: ${env:TopicName}
