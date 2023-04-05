@@ -52,4 +52,4 @@ npx sls deploy
 ```
 
 # Alerts 
-![image](https://user-images.githubusercontent.com/39345855/230177625-69670cac-58da-4daf-be58-0a18a72b930b.png)
+![image](https://user-images.githubusercontent.com/39345855/230177784-69dce656-5463-409a-9b3d-8ebefc264304.png)
