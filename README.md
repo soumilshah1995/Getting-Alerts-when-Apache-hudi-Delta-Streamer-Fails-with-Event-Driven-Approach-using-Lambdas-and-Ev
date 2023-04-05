@@ -12,7 +12,7 @@ Getting Alerts when Apache hudi Delta Streamer Fails with Event Driven Approach 
 ##### Step 1: Download the repository
 
 ```
-git clone https://github.com/soumilshah1995/How-to-receive-notifications-when-your-Glue-ETl-scripts-fail-Email-Alerts.git
+git clone https://github.com/soumilshah1995/Getting-Alerts-when-Apache-hudi-Delta-Streamer-Fails-with-Event-Driven-Approach-using-Lambdas-and-Ev.git
 ```
 
 ##### Step 2: change the Env Values
